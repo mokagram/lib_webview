@@ -17,6 +17,8 @@
 #include <QColor>
 #include <QSize>
 
+#include <optional>
+
 class QString;
 class QTemporaryDir;
 class QWidget;
@@ -51,6 +53,7 @@ struct WindowConfig {
 	QSize initialSize;
 	QString shellMessageToken;
 	QString restrictedOrigin;
+	std::optional<bool> debug;
 };
 
 class Window final {

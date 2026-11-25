@@ -176,7 +176,7 @@ bool Window::createWebView(QWidget *parent, const WindowConfig &config) {
 		.dataRequestRedirectHost = config.dataRequestRedirectHost.toStdString(),
 		.userDataPath = userDataPath.toStdString(),
 		.userDataToken = config.storageId.token.toStdString(),
-		.debug = OptionWebviewDebugEnabled.value(),
+		.debug = config.debug.value_or(OptionWebviewDebugEnabled.value()),
 		.safe = config.safe,
 		.allowThirdPartyCookies = config.allowThirdPartyCookies,
 		.mode = config.mode,
